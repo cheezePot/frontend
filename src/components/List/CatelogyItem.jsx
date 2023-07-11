@@ -52,7 +52,7 @@ const CatelogyItem = (props) => {
 
   return (
     <Container>
-      <Image content={props.content} />
+      <Image content={props.content.toLowerCase()} />
       <RightBox>
         <H3>#{props.content}</H3>
         <ToListBtn
