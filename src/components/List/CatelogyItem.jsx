@@ -27,7 +27,7 @@ const CatelogyItem = (props) => {
     height: 20rem;
     float: left;
     background-image: ${(props) =>
-      `url(${process.env.PUBLIC_URL}/images/categorlItem/${props.content}.gif)`};
+      `url(images/categorlItem/${props.content}.gif)`};
     background-position: center;
     background-size: contain;
     margin: 2rem;
