@@ -59,7 +59,7 @@ const LocDetail = () => {
   let [googlemaps, setGooglemaps] = useState(); // location 위도 경도
   
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/locdetail/${locnum}`,
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/locdetail/${locnum}`,
     {params: {locnum: locnum}},
     {withCredentials: true}
     )
@@ -72,7 +72,7 @@ const LocDetail = () => {
       })
     })
 
-    axios.get(`http://localhost:5000/board/list/${locnum}`,
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/board/list/${locnum}`,
       {params: {locnum: locnum}},
       {withCredentials: true}
     )

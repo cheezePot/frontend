@@ -8,6 +8,7 @@ import SelectBox from "../components/Card/SelectBox";
 import DetailAlart from "../components/Card/DetailAlart";
 import Dropdown from "../components/Card/Dropdown";
 import SearchbarSelect from "../components/SearchbarSelect";
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Container = styled.div`
   background-color: black;
@@ -54,12 +55,11 @@ const SelectPage = (props) => {
   const [isAlart, setIsAlart] = useState(false); //alart창이 띄워지는가?
   const [index, setIndex] = useState(-1);
   const [result, setResult] = useState();
-  
+
   // api가져오기
   const getContents = () => {
-    axios.get(`http://localhost:5000/api/content/${content}`)
+    axios.get(`${BACKEND_URL}/api/content/${content}`)
     .then((res) => {
-      // console.log(res.data);
       setContents(res.data);
       if(res.data==="") //일치하는 검색결과가 없다면
         console.log("검색결과 없음")
@@ -85,7 +85,7 @@ const SelectPage = (props) => {
   };
 
   const handleSearch = () => {
-    axios.get(`http://localhost:5000/search?search=${searchTerm}&conca=${content}`)
+    axios.get(`${BACKEND_URL}/search?search=${searchTerm}&conca=${content}`)
     .then((res) => {
       setContents(res.data);
     })

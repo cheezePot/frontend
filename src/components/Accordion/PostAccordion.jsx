@@ -104,7 +104,7 @@ const PostAccordion = (props) => {
   
   const postBoard = (locnum) => {
     if(title!=="" && content!==""){
-      axios.post(`http://localhost:5000/board/post/${locnum}`,
+      axios.post(`${process.env.REACT_APP_BACKEND_URL}/board/post/${locnum}`,
       {
         title: title,
         content: content,

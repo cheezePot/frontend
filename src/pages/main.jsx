@@ -6,6 +6,7 @@ import CatelogyItem from "../components/List/CatelogyItem";
 import Searchbar from "../components/Searchbar";
 import LineGif from "../components/LineGif";
 import TouchSlider from "../components/TouchSlider";
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const Gradient = styled.div`
   width: 100%;
@@ -67,7 +68,7 @@ const Main = () => {
 
   const handleSearch = () => {
     // 검색기능
-    axios.get(`http://localhost:5000/search?search=${searchTerm}`)
+    axios.get(`${BACKEND_URL}/search?search=${searchTerm}`)
       .then((res) => {
         console.log(res.data);
         setSearchResults(res.data);

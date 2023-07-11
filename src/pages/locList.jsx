@@ -65,7 +65,7 @@ const LocList = (props) => {
 
   // api가져오기
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/locdata/${connum}/`,
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/locdata/${connum}/`,
     {params: {connum: connum}},
     {withCredentials: true}
     )

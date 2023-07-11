@@ -48,7 +48,7 @@ const LocList = () => {
 
   useEffect(() => {
     // localstorage에서 데이터를 가져옴 => db에서 데이터를 가져옴
-    axios.get(`http://localhost:5000/api/bookmarks?locnum=${query}`,
+    axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/bookmarks?locnum=${query}`,
     )
     .then((res) => {
       setContents(res.data);
