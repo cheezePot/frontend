@@ -132,7 +132,7 @@ const LocDetail = () => {
               <>
                 <PostAccordion locnum={locnum}/>
                 {boards.map((board, i)=>{
-                  return(<Accordion idx={i} nickname={board['nickname']} date={board['formatted_date']} title={board['title']} content={board['content']}/>);
+                  return(<Accordion idx={i} nickname={board['nickname']} date={board['post_date'].substr(0, 10)} title={board['title']} content={board['content']}/>);
                 })}
               </> : null
             }
