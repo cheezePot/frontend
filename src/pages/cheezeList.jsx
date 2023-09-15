@@ -86,7 +86,7 @@ const LocList = () => {
                 <Dropdown />
             </Selectors> */}
           </SubNavbar>
-          {panding ? 
+          { count != 0 ? panding ? 
             <TouchSlider>
               <Selectors>
                 {bookmarks.map((bookmark, i) => {
@@ -96,7 +96,7 @@ const LocList = () => {
                 })}
               </Selectors>
             </TouchSlider>
-          : <div>로딩중...</div>}
+          : <div>로딩중...</div> : <div style={{fontSize: '5rem'}}>북마크한 장소가 없습니다</div>}
       </Main>
      </Container>
   );
